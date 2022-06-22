@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load static %}
+
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+   
+
+      <!--Titulo del Formulario-->
+      <h2>Inscripcion de Usuario</h2>
+      <p class="lead">Complete todos los caompos con su informacion personal.</p>
+    </div>
+
+<form action="" method="POST">{% csrf_token %}
+
+      <!--Cuadro Nombre-->
+    <div class="row g-5">
+      </div>
+      <div class="container px-5 col-md-7 col-lg-8">
+        <h4 class="mb-3">Datos de Usuario</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input type="text" name="nombre_usuario" class="form-control" id="firstName" placeholder="" value="" required >
+              <div class="invalid-feedback">
+                Debe indicar su nombre.
+              </div>
+            </div>
+
+      <!--Cuadro Apellido-->
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input type="text" name="apellido_usuario" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Debe indicar su apellido.
+              </div>
+            </div>
+
+      <!--Cuadro UserName-->
+            <div class="col-12">
+              <label for="username" class="form-label">Nombre de usuario</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" name="nombre_user" class="form-control" id="username" placeholder="Ejemplo" required>
+              <div class="invalid-feedback">
+                  Debe indicar nombre de usuario.
+                </div>
+              </div>
+            </div>
+
+      <!--Cuadro Email-->
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+              <input type="email" name="email_usuario" class="form-control" id="email" placeholder="tumail@ejemplo.com">
+              <div class="invalid-feedback">
+                Debe indicar una direccion de Email.
+              </div>
+            </div>
+
+      <!--Cuadro Direccion-->
+            <div class="col-12">
+              <label for="address" class="form-label">Direccion</label>
+              <input type="text" name="direccion_usuario" class="form-control" id="address" placeholder="Direccion 1234" required>
+              <div class="invalid-feedback">
+                Debe indicar su direccion.
+              </div>
+            </div>
+
+      <!--Cuadro Telefono-->
+            <div class="col-12">
+              <label for="tel" class="form-label">Telefono</label>
+              <input type="interger" name="tel_usuario" class="form-control" id="address" placeholder="095123456" required>
+              <div class="invalid-feedback">
+              Debe indicar su telefono.
+              </div>
+            </div>
+            
+      <!--Lista Desplegable Tipo usuario-->
+            <div class="col-xs-12">
+              <label for="typeuser" class="form-label">Tipo de Usuario</label>
+              <select class="form-select" name="tipo_usuario" id="typeuser" required>
+                <option value="">Seleccione...</option>
+                <option>Alumno</option>
+                <option>Profesor</option>
+            
+              </select>
+              <div class="invalid-feedback">
+                Debe indicar una tipo de usuario.
+              </div>
+            </div>
+
+      <!--Lista Desplegable Curso-->
+            <div class="col-xs-12">
+              <label for="cursouser" class="form-label">Curso</label>
+              <select class="form-select" name="curso_usuario" id="cursouser" required>
+                <option value="">Seleccione...</option>
+                <option>CSS</option>
+                <option>HTML</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option>PHP</option>
+                <option>Python</option>
+
+              </select>
+              <div class="invalid-feedback">
+              Debe indicar un curso.
+              </div>
+            </div>
+
+          </div>
+
+      <!--Check Inscribirse-->
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Inscribirme</button>
+        </form>
+      </div>
+    </div>
+  </main>
+<p></p>
+
+    <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+      <script src="form-validation.js"></script>
+</form>
+    </body>
+</html>
+
+{% endblock %}

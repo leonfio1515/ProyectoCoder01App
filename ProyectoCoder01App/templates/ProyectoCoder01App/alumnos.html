@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Estos son los alumnos</p>
+<p>{% for a in alumnos %}</p>
+<li>{{a.nombre_usuario}} {{a.apellido_usuario}}, {{a.curso_usuario}}</li>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!----------------Cuerpo central------------>
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">TuCarreara esta aqui</h1>
+                            <p class="lead text-white-50 mb-4">Diseño creado mediante una plantilla de Bootstrap</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'inscribirse' %}">Inscibirse</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="{% url 'noticias' %}">Conocer mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<!--------------------------------------------->
+
+
+<!------------------------Slide de cursos-------------->
+
+<!------------------------Botones-------------->
+
+    <main>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            
+          
+<!------------------------Slide 1-------------->
+
+            <div class="container"  >
+            <div class="carousel-inner">  
+                <div class="carousel-item active" justify-content="center">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                {% for c in cursos %}
+                {% if c.nombre_curso == "Java" %}
+                <p align="center"><img src="{{c.foto_curso.url}}" width="350" height="250"></p>
+                {% endif %}
+                {% endfor %}
+                    <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+
+                    <div class="container">     
+                        <div class="carousel-caption">
+                            <p><a class="btn btn-lg btn-primary" href="{% url 'cursos' %}">Saber Mas</a></p>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                {% for c in cursos %}
+                {% if c.nombre_curso == "HTML" %}
+                <p align="center"><img src="{{c.foto_curso.url}}" width="350" height="250"></p>
+                {% endif %}
+                {% endfor %}
+                        <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+    
+                    <div class="container">
+                        <div class="carousel-caption">
+                            
+                            <p><a class="btn btn-lg btn-primary" href="{% url 'cursos' %}">Saber Mas</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        {% for c in cursos %}
+                        {% if c.nombre_curso == "Python" %}
+                        <p align="center"><img src="{{c.foto_curso.url}}" width="350" height="250"></p>
+                        {% endif %}
+                        {% endfor %}
+                        <rect width="100%" height="100%" fill="#777" />
+                    </svg>
+                    
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p><a class="btn btn-lg btn-primary" href="{% url 'cursos' %}">Saber Mas</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!--Slide de cursos FIN-->
+
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Comentarios de usuarios</h2>
+                    <p class="lead mb-0">Nuestros clientes aman trabajar con nosotros</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- Testimonial 1-->
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2-->
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
+
+{% endblock %}
