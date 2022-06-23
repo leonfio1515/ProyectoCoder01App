@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="b-example-divider"></div>
+<header class="py-3 mb-3 border-bottom">
+
+<h4>Buscar Cursos:</h4>
+    <form action="" method="POST">{% csrf_token %}
+        <!-------------------------Barra busqueda------------------->
+        <div class="d-flex align-items-center">
+            <form class="w-100 me-3" role="search">
+                <input type="search" name="nombre_curso" class="form-control" placeholder="Buscar..." aria-label="Search">
+                <input type="submit" value="Buscar">
+            </form>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+<div class="b-example-divider"></div>
+<header class="py-3 mb-3 border-bottom">
+
+</header>
+<h5>Resultado de la busqueda:</h5>
+<ul>
+    {% for curso in curso_buscado %}
+
+    <li>Nombre: {{curso.nombre_curso}}</li>
+    <li>Costo: ${{curso.costo_curso}}</li>
+    <li>Comision: Nº{{curso.comision_curso}}</li>
+    <li>{{curso.descripcion_curso}}</li>
+    <img src="{{curso.foto_curso.url}}" width="70" height="70">
+    <p></p>
+    <p></p>
+    {% endfor %}
+</ul>
+</header>
+
+<div class="b-example-divider"></div>
+
+<!----------------------------------------------------------------------->
+
+
+
+{% endblock %}

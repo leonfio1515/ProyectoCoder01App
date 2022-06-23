@@ -58,6 +58,17 @@ def VInscribirse(request):
         return redirect("inicio")
     return render(request, "inscribirse.html")
 
+def VBuscar(request):
+    if request.method == "POST":
+        
+        busqueda_cursos = request.POST["nombre_curso"]
+        cursos = Cursos.objects.filter(nombre_curso__icontains=busqueda_cursos )
+    
+    else:
+        cursos = []
+
+    return render(request, "buscar.html",  {"curso_buscado":cursos})
+
 def VNoticias(request):
     listanoticia = Noticias.objects.all()
     return render(request, "noticias.html", {"listnoticias":listanoticia})

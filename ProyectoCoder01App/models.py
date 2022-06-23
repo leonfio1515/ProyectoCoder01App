@@ -20,6 +20,7 @@ class Cursos(models.Model):
     costo_curso = models.IntegerField()
     comision_curso = models.IntegerField()
     foto_curso = models.ImageField(blank='', default="", upload_to='images/')
+    descripcion_curso = models.CharField(max_length=500, blank='', default="")
 
 class Noticias(models.Model):
     nombre_noticia = models.CharField(max_length=20)

@@ -6,12 +6,14 @@ class CursosAdmin(admin.ModelAdmin):
     list_display = (
         "nombre_curso", 
         "costo_curso", 
-        "comision_curso"
+        "comision_curso",
+        "descripcion_curso",
         )
     search_fields = (
         "nombre_curso",
         "costo_curso",
         "comision_curso"
+        "descripcion_curso",
         )
 
 class UsuarioAdmin(admin.ModelAdmin):
