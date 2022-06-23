@@ -5,7 +5,7 @@ from .models import *
 
 def VInicio(request):
     listaCursos = Cursos.objects.all()
-    return render(request,"inicio.html", {"cursos":listaCursos} )
+    return render(request,"ProyectoCoder01App/inicio.html", {"cursos":listaCursos} )
 
 def VContacto(request):
 
