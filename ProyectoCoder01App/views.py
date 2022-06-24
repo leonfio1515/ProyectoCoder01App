@@ -23,19 +23,19 @@ def VContacto(request):
         msj.save()
         return redirect("inicio")
 
-    return render(request, "contacto.html")
+    return render(request, "ProyectoCoder01App/contacto.html")
 
 def VCursos(request):
     listacursos = Cursos.objects.all()
-    return render(request, "cursos.html", {"cursos": listacursos})
+    return render(request, "ProyectoCoder01App/cursos.html", {"cursos": listacursos})
 
 def VAlumnos(request):
     alum = Usuario.objects.filter(tipo_usuario="Alumno")
-    return render(request, "alumnos.html", {"alumnos":alum})
+    return render(request, "ProyectoCoder01App/alumnos.html", {"alumnos":alum})
 
 def VProfesores(request):
     prof = Usuario.objects.filter(tipo_usuario = "Profesor")
-    return render(request, "profesores.html", {"profesor":prof})
+    return render(request, "ProyectoCoder01App/profesores.html", {"profesor":prof})
 
 def VInscribirse(request):
     
@@ -56,7 +56,7 @@ def VInscribirse(request):
         )
         users.save()
         return redirect("inicio")
-    return render(request, "inscribirse.html")
+    return render(request, "ProyectoCoder01App/inscribirse.html")
 
 def VBuscar(request):
     if request.method == "POST":
@@ -67,8 +67,8 @@ def VBuscar(request):
     else:
         cursos = []
 
-    return render(request, "buscar.html",  {"curso_buscado":cursos})
+    return render(request, "ProyectoCoder01App/buscar.html",  {"curso_buscado":cursos})
 
 def VNoticias(request):
     listanoticia = Noticias.objects.all()
-    return render(request, "noticias.html", {"listnoticias":listanoticia})
+    return render(request, "ProyectoCoder01App/noticias.html", {"listnoticias":listanoticia})
